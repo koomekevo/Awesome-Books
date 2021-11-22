@@ -2,7 +2,6 @@ class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
-    this.id = Math.random();
   }
 }
 
@@ -56,3 +55,19 @@ function addToUI(bookObj) {
   bookList.appendChild(book);
 }
 
+const addButton = document.getElementById('add-btn');
+addButton.addEventListener('click', () => {
+  const book = getInput();
+  library.addBook(book);
+});
+
+window.onload = () => {
+  library.data = JSON.parse(localStorage.getItem('library' || '[]'));
+  if (library.data === null) {
+    library.data = [];
+    return;
+  }
+
+  library.data.forEach((book) => addToUI(book));
+  setDate();
+};
