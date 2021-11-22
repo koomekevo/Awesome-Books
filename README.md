@@ -16,7 +16,7 @@ At this stage, it is possible to add and remove books in and out of the list.
 
 ## Live Demo
 
-[Click here to check how it works!](https://livedemo.com)
+[Click here to check how it works!](https://koomekevo.github.io/Awesome-Books/)
 
 
 ## Getting Started
