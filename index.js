@@ -1,3 +1,4 @@
+/* eslint-disable */
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -69,5 +70,4 @@ window.onload = () => {
   }
 
   library.data.forEach((book) => addToUI(book));
-  setDate();
 };
