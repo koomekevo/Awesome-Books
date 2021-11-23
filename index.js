@@ -15,7 +15,7 @@ class Library {
   }
 
   addBook(book) {
-    this.data.push(book);
+    this.data.concat(book);
     localStorage.setItem('library', JSON.stringify(this.data));
     Display.addToUI(book);
   }
