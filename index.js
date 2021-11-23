@@ -1,48 +1,30 @@
-/* eslint-disable */
-let library = [];
+/* eslint-disable max-classes-per-file */
+/* eslint-disable no-use-before-define */
 
-function getInput() {
-  const book = {};
-  book.title = document.getElementById('bookTitle').value;
-  book.author = document.getElementById('bookAuthor').value;
-  return book;
+//Add Book and Library Classes
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+    this.id = Math.random();
+  }
 }
 
-function removeBook(title) {
-  const book = document.getElementById(title);
-  book.remove();
-  library = library.filter((bookObj) => bookObj.title !== title);
-  localStorage.setItem('library', JSON.stringify(library));
-}
-
-function addBook(bookObj) {
-  const bookList = document.getElementById('book-list');
-  const book = document.createElement('LI');
-  book.setAttribute('id', bookObj.title);
-  book.innerHTML = `<h3> ${bookObj.title} </h3> <p>${bookObj.author} </p>`;
-  const deleteBtn = document.createElement('button');
-  deleteBtn.innerHTML = 'Delete';
-  deleteBtn.addEventListener('click', () => removeBook(bookObj.title));
-  book.appendChild(deleteBtn);
-  bookList.appendChild(book);
-}
-
-const addButton = document.getElementById('add-btn');
-addButton.addEventListener('click', () => {
-  const book = getInput();
-  library.push(book);
-  localStorage.setItem('library', JSON.stringify(library));
-  addBook(book);
-});
-
-window.onload = () => {
-  library = JSON.parse(localStorage.getItem('library' || '[]'));
-  if (library === null) {
-    library = [];
-    return;
+class Library {
+  constructor() {
+    this.data = [];
   }
 
-  library.forEach((book) => {
-    addBook(book);
-  });
-};
+  addBook(book) {
+    this.data.push(book);
+    localStorage.setItem('library', JSON.stringify(this.data));
+    addToUI(book);
+  }
+
+  removeBook(id) {
+    const book = document.getElementById(id);
+    book.remove();
+    this.data = this.data.filter((bookObj) => bookObj.id !== id);
+    localStorage.setItem('library', JSON.stringify(this.data));
+  }
+}
