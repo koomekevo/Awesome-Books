@@ -1,7 +1,6 @@
 /* eslint-disable max-classes-per-file */
 /* eslint-disable no-use-before-define */
 
-//Add Book and Library Classes
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -52,14 +51,12 @@ function addToUI(bookObj) {
   bookList.appendChild(book);
 }
 
-// Add Button
 const addButton = document.getElementById('add-btn');
 addButton.addEventListener('click', () => {
   const book = getInput();
   library.addBook(book);
 });
 
-// Load page
 window.onload = () => {
   library.data = JSON.parse(localStorage.getItem('library' || '[]'));
   if (library.data === null) {
@@ -69,4 +66,3 @@ window.onload = () => {
 
   library.data.forEach((book) => addToUI(book));
 };
-
