@@ -28,3 +28,45 @@ class Library {
     localStorage.setItem('library', JSON.stringify(this.data));
   }
 }
+
+const library = new Library();
+
+function getInput() {
+  const title = document.getElementById('bookTitle');
+  const author = document.getElementById('bookAuthor');
+  const book = new Book(title.value, author.value);
+  title.value = '';
+  author.value = '';
+  return book;
+}
+
+function addToUI(bookObj) {
+  const bookList = document.getElementById('book-list');
+  const book = document.createElement('LI');
+  book.setAttribute('id', bookObj.id);
+  book.innerHTML = `<h3>"${bookObj.title}" by ${bookObj.author}</h3>`;
+  const deleteBtn = document.createElement('button');
+  deleteBtn.innerHTML = 'Remove';
+  deleteBtn.addEventListener('click', () => library.removeBook(bookObj.id));
+  book.appendChild(deleteBtn);
+  bookList.appendChild(book);
+}
+
+// Add Button
+const addButton = document.getElementById('add-btn');
+addButton.addEventListener('click', () => {
+  const book = getInput();
+  library.addBook(book);
+});
+
+// Load page
+window.onload = () => {
+  library.data = JSON.parse(localStorage.getItem('library' || '[]'));
+  if (library.data === null) {
+    library.data = [];
+    return;
+  }
+
+  library.data.forEach((book) => addToUI(book));
+};
+
