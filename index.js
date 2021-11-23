@@ -17,7 +17,7 @@ class Library {
   addBook(book) {
     this.data.push(book);
     localStorage.setItem('library', JSON.stringify(this.data));
-    addToUI(book);
+    Display.addToUI(book);
   }
 
   removeBook(id) {
@@ -30,30 +30,34 @@ class Library {
 
 const library = new Library();
 
-function getInput() {
-  const title = document.getElementById('bookTitle');
-  const author = document.getElementById('bookAuthor');
-  const book = new Book(title.value, author.value);
-  title.value = '';
-  author.value = '';
-  return book;
+class Input {
+  static getInput() {
+    const title = document.getElementById('bookTitle');
+    const author = document.getElementById('bookAuthor');
+    const book = new Book(title.value, author.value);
+    title.value = '';
+    author.value = '';
+    return book;
+  }
 }
 
-function addToUI(bookObj) {
-  const bookList = document.getElementById('book-list');
-  const book = document.createElement('LI');
-  book.setAttribute('id', bookObj.id);
-  book.innerHTML = `<h3>"${bookObj.title}" by ${bookObj.author}</h3>`;
-  const deleteBtn = document.createElement('button');
-  deleteBtn.innerHTML = 'Remove';
-  deleteBtn.addEventListener('click', () => library.removeBook(bookObj.id));
-  book.appendChild(deleteBtn);
-  bookList.appendChild(book);
+class Display {
+  static addToUI(bookObj) {
+    const bookList = document.getElementById('book-list');
+    const book = document.createElement('LI');
+    book.setAttribute('id', bookObj.id);
+    book.innerHTML = `<h3>"${bookObj.title}" by ${bookObj.author}</h3>`;
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerHTML = 'Remove';
+    deleteBtn.addEventListener('click', () => library.removeBook(bookObj.id));
+    book.appendChild(deleteBtn);
+    bookList.appendChild(book);
+  }
 }
 
 const addButton = document.getElementById('add-btn');
 addButton.addEventListener('click', () => {
-  const book = getInput();
+  const book = Input.getInput();
   library.addBook(book);
 });
 
@@ -64,5 +68,5 @@ window.onload = () => {
     return;
   }
 
-  library.data.forEach((book) => addToUI(book));
+  library.data.forEach((book) => Display.addToUI(book));
 };
