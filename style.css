@@ -1,4 +1,83 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Cuprum', sans-serif;
+  font-style: normal;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.line {
+  width: 7.5%;
+  border: 0.05rem solid #000;
+  margin: 1.5rem auto;
+}
+
+form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 1rem auto;
+  gap: 0.5rem;
+}
+
+input,
+#add-btn {
+  border: 0.15rem solid #000;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+input {
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+}
+
+#add-btn {
+  padding: 0 0.3rem;
+  width: 20%;
+}
+
+input::placeholder {
+  color: #000;
+}
+
+#book-list {
+  list-style: none;
+  width: 45%;
+  border: 0.15rem solid #000;
+  margin: 0 auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0.6rem;
+}
+
+li:nth-of-type(2n-1) {
+  background-color: #ddd;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 2.25rem;
+}
+
+.remove {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border: 0.15rem solid #000;
+  padding: 0 0.5rem;
+}
+
+button {
+  box-shadow: 3px 3px #000;
 }

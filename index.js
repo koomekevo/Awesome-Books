@@ -44,10 +44,11 @@ class Input {
 class Display {
   static addToUI(bookObj) {
     const bookList = document.getElementById('book-list');
-    const book = document.createElement('LI');
+    const book = document.createElement('li');
     book.setAttribute('id', bookObj.id);
     book.innerHTML = `<h3>"${bookObj.title}" by ${bookObj.author}</h3>`;
     const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('remove');
     deleteBtn.innerHTML = 'Remove';
     deleteBtn.addEventListener('click', () => library.removeBook(bookObj.id));
     book.appendChild(deleteBtn);
