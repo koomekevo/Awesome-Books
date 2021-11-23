@@ -35,13 +35,13 @@ As for the installation, follow these steps!
 
 ## Authors
 
-👤 **Author1**
+👤 **Kevin Koome**
 
 - GitHub: [@koomekevo](https://github.com/koomekevo)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Twitter: [@koomekevo](https://twitter.com/koomekevo)
+- LinkedIn: [LinkedIn](https://ke.linkedin.com/in/kevin-koome-aab84186)
 
-👤 **Author2**
+👤 **Natalie Poletaeva**
 
 - GitHub: [@NataliaPoletaeva](https://github.com/NataliaPoletaeva)
 - Twitter: [@Fly_Meets](https://twitter.com/Fly_Meets)
