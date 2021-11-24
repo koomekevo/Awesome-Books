@@ -24,7 +24,7 @@
           <li><a href="#" id="navContact" onclick="displaySection('contact')">Contact</a></li>
         </ul>
       </nav>
-      <p class="date"></p>
+      <div id="time"></div>
     </div>
 
     <div id="list" class="list">
@@ -64,6 +64,11 @@
 
   <script src="luxon.js"></script>
   <script src="index.js"></script>
+  <script>
+    var DateTime = luxon.DateTime;
+    var localTime=DateTime.local();
+    console.log(localTime.toString());
+</script>
 </body>
 
 </html>
