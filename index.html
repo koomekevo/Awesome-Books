@@ -17,6 +17,14 @@
   <main>
     <div>
       <h1 id="title" class="title">Awesome Books</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#" id="navList" onclick="displaySection('list')">List</a></li>
+          <li><a href="#" id="navNew" onclick="displaySection('form')">Add New</a></li>
+          <li><a href="#" id="navContact" onclick="displaySection('contact')">Contact</a></li>
+        </ul>
+      </nav>
+      <p id="date" class="date"></p>
     </div>
 
     <div id="list" class="list">
@@ -31,8 +39,22 @@
         <button id="add-btn" type="button">Add</button>
       </form>
     </div>
+    <div id="contact" class="contact">
+      <p>
+        If you have any questions or you just want to say "Hello".
+        You can reach us to.
+      </p>
+      <ul>
+        <li>Our email: mail@awesomebooks.com</li>
+        <li>Our phone number: +2540123456789</li>
+        <li>Our address: Milimani Area, Meru, Kenya</li>
+      </ul>
+    </div>
   </main>
+  <footer class="footer">
+    <h3>Copyright &copy;</h3>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.1.1/build/global/luxon.min.js"></script>
   <script src="index.js"></script>
 </body>
-
 </html>
