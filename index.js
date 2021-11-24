@@ -104,10 +104,3 @@ function displaySection(section) {
     default: break;
   }
 }
-
-// eslint-disable-next-line no-undef
-function setDate() {
-  const date = document.getElementById('date');
-  const { DateTime } = require("luxon");
-  date.innerHTML = DateTime.now().toFormat('LLL dd yyyy, t');
-}
