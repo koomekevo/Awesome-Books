@@ -30,9 +30,9 @@ class Library {
 
 const library = new Library();
 const currentDate = document.getElementById('date');
-  /* eslint-disable */
-  currentDate.innerHTML = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
-  /* eslint-enable */
+/* eslint-disable */
+currentDate.innerHTML = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
+/* eslint-enable */
 
 class Input {
   static getInput() {
@@ -108,5 +108,3 @@ function displaySection(section) {
     default: break;
   }
 }
-
-
