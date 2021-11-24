@@ -63,12 +63,6 @@ h2 {
   margin: 5rem auto;
 }
 
-.line {
-  width: 7.5%;
-  border: 0.05rem solid #000;
-  margin: 1.5rem auto;
-}
-
 form {
   width: 40%;
   display: flex;
