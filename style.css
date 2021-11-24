@@ -49,6 +49,8 @@ nav {
 
 #date {
   text-align: end;
+  font-size: 1.25rem;
+  margin-right: 3%;
 }
 
 #list,
