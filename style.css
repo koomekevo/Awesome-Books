@@ -47,6 +47,10 @@ nav {
   border-right: 0.1rem solid #000;
 }
 
+#date {
+  text-align: end;
+}
+
 #list,
 #contact {
   display: none;
