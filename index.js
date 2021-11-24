@@ -111,5 +111,4 @@ function setDate() {
   const { DateTime } = luxon;
 
   date.innerHTML = DateTime.now().toFormat('LLL dd yyyy, t');
-}
-
+};
