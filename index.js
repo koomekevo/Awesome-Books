@@ -8,7 +8,6 @@ class Book {
   }
 }
 
-<<<<<<< HEAD
 class Library {
   constructor() {
     this.data = [];
@@ -39,8 +38,6 @@ const currentDate = document.getElementById('date');
 currentDate.innerHTML = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
 /* eslint-enable */
 
-=======
->>>>>>> 6dde1ce5a3d600b8dd8a29308060bc115d5318b3
 class Input {
   static getInput() {
     const title = document.getElementById('bookTitle');
