@@ -49,6 +49,8 @@ nav {
 
 #date {
   text-align: end;
+  font-size: 1.25rem;
+  margin-right: 3%;
 }
 
 #list,
@@ -61,12 +63,6 @@ h2 {
   font-size: 4rem;
   text-align: center;
   margin: 5rem auto;
-}
-
-.line {
-  width: 7.5%;
-  border: 0.05rem solid #000;
-  margin: 1.5rem auto;
 }
 
 form {
