@@ -16,7 +16,9 @@ class Library {
 
   addBook(book) {
     this.data.concat(book);
-    localStorage.setItem('library', JSON.stringify(this.data));
+    if(!localStorage.getItem('library')){
+      localStorage.setItem('library', JSON.stringify(this.data));
+    }
     Display.addToUI(book);
   }
 
@@ -25,6 +27,9 @@ class Library {
     book.remove();
     this.data = this.data.filter((bookObj) => bookObj.id !== id);
     localStorage.setItem('library', JSON.stringify(this.data));
+    if(!localStorage.getItem('library')){
+      localStorage.setItem('library', JSON.stringify(this.data));
+    }
   }
 }
 
