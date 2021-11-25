@@ -18,9 +18,11 @@ class Library {
     if (!localStorage.getItem('library')) {
       localStorage.setItem('library', JSON.stringify(this.data));
     }
+    /* eslint-disable */
     Display.addToUI(book);
   }
 
+  /* eslint-enable */
   removeBook(id) {
     const book = document.getElementById(id);
     book.remove();
@@ -49,7 +51,6 @@ class Input {
   }
 }
 
-/* eslint-disable no-use-before-define: */
 class Display {
   static addToUI(bookObj) {
     const bookList = document.getElementById('book-list');
