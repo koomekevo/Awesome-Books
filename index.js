@@ -15,7 +15,7 @@ class Library {
 
   addBook(book) {
     this.data.concat(book);
-    if(!localStorage.getItem('library')){
+    if (!localStorage.getItem('library')) {
       localStorage.setItem('library', JSON.stringify(this.data));
     }
     Display.addToUI(book);
@@ -26,7 +26,7 @@ class Library {
     book.remove();
     this.data = this.data.filter((bookObj) => bookObj.id !== id);
     localStorage.setItem('library', JSON.stringify(this.data));
-    if(!localStorage.getItem('library')){
+    if (!localStorage.getItem('library')) {
       localStorage.setItem('library', JSON.stringify(this.data));
     }
   }
@@ -80,6 +80,7 @@ window.onload = () => {
   library.data.forEach((book) => Display.addToUI(book));
 };
 
+/* eslint no-unused-vars */
 function displaySection(section) {
   const sectionList = document.getElementById('list');
   const sectionForm = document.getElementById('form');
