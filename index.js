@@ -18,6 +18,7 @@ class Library {
     if (!localStorage.getItem('library')) {
       localStorage.setItem('library', JSON.stringify(this.data));
     }
+    /* eslint-disable no-use-before-define: */
     Display.addToUI(book);
   }
 
@@ -80,7 +81,7 @@ window.onload = () => {
   library.data.forEach((book) => Display.addToUI(book));
 };
 
-/* eslint no-unused-vars */
+/* eslint-disable no-unused-vars */
 function displaySection(section) {
   const sectionList = document.getElementById('list');
   const sectionForm = document.getElementById('form');
