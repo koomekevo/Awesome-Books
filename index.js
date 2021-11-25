@@ -64,25 +64,6 @@ class Display {
   }
 }
 
-class Library {
-  constructor() {
-    this.data = [];
-  }
-
-  addBook(book) {
-    this.data.concat(book);
-    localStorage.setItem('library', JSON.stringify(this.data));
-    Display.addToUI(book);
-  }
-
-  removeBook(id) {
-    const book = document.getElementById(id);
-    book.remove();
-    this.data = this.data.filter((bookObj) => bookObj.id !== id);
-    localStorage.setItem('library', JSON.stringify(this.data));
-  }
-}
-
 const library = new Library();
 const currentDate = document.getElementById('date');
 currentDate.innerHTML = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
