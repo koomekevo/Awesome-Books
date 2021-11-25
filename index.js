@@ -32,9 +32,9 @@ class Library {
   }
 }
 
+/* eslint-disable */
 const library = new Library();
 const currentDate = document.getElementById('date');
-/* eslint-disable */
 currentDate.innerHTML = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
 /* eslint-enable */
 
