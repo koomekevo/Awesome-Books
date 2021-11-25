@@ -64,10 +64,6 @@ class Display {
   }
 }
 
-const library = new Library();
-const currentDate = document.getElementById('date');
-currentDate.innerHTML = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
-
 const addButton = document.getElementById('add-btn');
 addButton.addEventListener('click', () => {
   const book = Input.getInput();
