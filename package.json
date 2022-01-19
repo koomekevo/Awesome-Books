@@ -1,0 +1,27 @@
+{
+  "name": "awesome-books",
+  "version": "1.0.0",
+  "description": "Small Book Library",
+  "main": "index.js",
+  "dependencies": {
+    "luxon": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koomekevo/Awesome-Books.git"
+  },
+  "keywords": [
+    "awesome",
+    "books"
+  ],
+  "author": "Kevin Koome & Natalie Poletaeva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/koomekevo/Awesome-Books/issues"
+  },
+  "homepage": "https://github.com/koomekevo/Awesome-Books#readme"
+}

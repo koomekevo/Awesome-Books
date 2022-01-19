@@ -16,25 +16,52 @@
 <body>
   <main>
     <div>
-      <h1 id="title" class="title">All awesome Books</h1>
+      <nav>
+        <p class="logo">Awesome Books</p>
+        <ul class="nav-list">
+          <li><a href="#" id="navList" onclick="displaySection('list')">List</a></li>
+          <li><a href="#" id="navNew" onclick="displaySection('form')">Add new</a></li>
+          <li><a href="#" id="navContact" onclick="displaySection('contact')">Contact</a></li>
+        </ul>
+      </nav>
+      <br />
+      <div id="date"></div>
     </div>
 
     <div id="list" class="list">
+      <h1 id="title" class="title">Awesome Books</h1>
       <ul id="book-list">
       </ul>
     </div>
 
-    <div class="line"></div>
-
     <div id="form" class="form">
-      <h2>Add book to the list</h2>
+      <h2>Add a new book</h2>
       <form action="#" class="input-form" method="post">
         <input id="bookTitle" type="text" placeholder="Title">
         <input id="bookAuthor" type="text" placeholder="Author">
         <button id="add-btn" type="button">Add</button>
       </form>
     </div>
+
+    <div id="contact" class="contact">
+      <h2>Contact information</h2>
+      <p>
+        If you have any questions or you just want to say "Hello".
+        You can reach us to.
+      </p>
+      <ul>
+        <li>Our email: mail@awesomebooks.com</li>
+        <li>Our phone number: +2540123456789</li>
+        <li>Our address: Milimani Area, Meru, Kenya</li>
+      </ul>
+    </div>
   </main>
+
+  <footer class="footer">
+    <h3>Copyright &copy;</h3>
+  </footer>
+
+  <script src="luxon.js"></script>
   <script src="index.js"></script>
 </body>
 

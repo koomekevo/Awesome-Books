@@ -1,5 +1,4 @@
 /* eslint-disable max-classes-per-file */
-/* eslint-disable no-use-before-define */
 
 class Book {
   constructor(title, author) {
@@ -16,19 +15,30 @@ class Library {
 
   addBook(book) {
     this.data.concat(book);
-    localStorage.setItem('library', JSON.stringify(this.data));
+    if (!localStorage.getItem('library')) {
+      localStorage.setItem('library', JSON.stringify(this.data));
+    }
+    /* eslint-disable */
     Display.addToUI(book);
   }
 
+  /* eslint-enable */
   removeBook(id) {
     const book = document.getElementById(id);
     book.remove();
     this.data = this.data.filter((bookObj) => bookObj.id !== id);
     localStorage.setItem('library', JSON.stringify(this.data));
+    if (!localStorage.getItem('library')) {
+      localStorage.setItem('library', JSON.stringify(this.data));
+    }
   }
 }
 
+/* eslint-disable */
 const library = new Library();
+const currentDate = document.getElementById('date');
+currentDate.innerHTML = luxon.DateTime.now().toLocaleString(luxon.DateTime.DATETIME_FULL);
+/* eslint-enable */
 
 class Input {
   static getInput() {
@@ -71,3 +81,36 @@ window.onload = () => {
 
   library.data.forEach((book) => Display.addToUI(book));
 };
+
+/* eslint-disable no-unused-vars */
+function displaySection(section) {
+  const sectionList = document.getElementById('list');
+  const sectionForm = document.getElementById('form');
+  const sectionContact = document.getElementById('contact');
+  const heading = document.getElementById('title');
+
+  switch (section) {
+    case 'list':
+      sectionList.style.display = 'block';
+      sectionForm.style.display = 'none';
+      sectionContact.style.display = 'none';
+      heading.innerHTML = 'Awesome Books List';
+      break;
+
+    case 'form':
+      sectionList.style.display = 'none';
+      sectionForm.style.display = 'block';
+      sectionContact.style.display = 'none';
+      heading.innerHTML = 'Add New Book';
+      break;
+
+    case 'contact':
+      sectionList.style.display = 'none';
+      sectionForm.style.display = 'none';
+      sectionContact.style.display = 'block';
+      heading.innerHTML = 'Contact Information';
+      break;
+
+    default: break;
+  }
+}
